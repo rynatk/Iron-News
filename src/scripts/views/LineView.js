@@ -17,8 +17,8 @@ class LineView extends Backbone.View {
   upvote(event) {
     event.preventDefault();
 
-    this.model.upvote().done(function() {
-      console.log('hey you did something!');
+    this.model.upvote().done(function(data) {
+      console.log(data);
     }).fail();
   }
 

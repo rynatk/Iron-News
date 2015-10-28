@@ -26,17 +26,16 @@ class CommentsView extends Backbone.View {
     let $newComment = $('');
 
     this.model.createComment(message, name).done(function() {
-      $newComment.html(`<li>
+      $newComment = (`<li>
         <div class="message">${message}</div>
         <div class="author">by ${name}</div>
         <time>${moment().fromNow()}</time>
       </li>`);
+      $('.comments').prepend($newComment);
       event.target.reset();
     }).fail(function() {
       $newComment.remove();
     });
-
-    $('ul .comments', self.$el).prepend($newComment);
   }
 
   render() {
