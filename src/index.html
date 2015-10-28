@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>w5d4</title>
+    <link rel="stylesheet" href="screen.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <header>
+        <img src="http://theironyard.com/images/iron-yard-logo.svg" height="30px"/>
+        <h3><a href="#">Iron News</a></h3>
+        <ul>
+          <a href="">New</a> |
+          <a href="">Comments</a> |
+          <a href="">Show</a> |
+          <a href="">Ask</a> |
+          <a href="">Jobs</a> |
+          <a href="">Submit</a>
+        </ul>
+      </header>
+      <main>
+      Main
+      </main>
+      <footer>
+      <ul>
+        <a href="">Guidelines</a> |
+        <a href="">FAQ</a> |
+        <a href="">Support</a> |
+        <a href="">Lists</a> |
+        <a href="">Bookmarklet</a> |
+        <a href="">DMCA</a> |
+        <a href="">Y Combinator</a> |
+        <a href="">Apply</a> |
+        <a href="">Contact</a>
+      </ul>
+      </footer>
+    </div>
+
+    <script type="text/template" id="lineViewTemplate">
+      <div class="upvoteTriangle">
+        <div class="triangle"></div>
+      </div>
+      <div class="title">
+        <div class="{{ url }}"><a href="{{ url }}">{{ title }}</a></div>
+      </div>
+      <div class="details">
+        <span class="spacer">__</span>
+        <span class="votes">{{ votes }} points</span>
+        by
+        <span class="submitter">{{ submitter }}</span>
+        <time>{{ timeAgo }}</time>
+        |
+        <a href="#{{ id }}/comments">{{ comments_count }} comments</a>
+      </div>
+    </script>
+
+
+    <script type="text/template" id="commentsViewTemplate">
+      <div class="line">
+      </div>
+      <form class="newComment">
+        <div class="group">
+          <textarea name="message" rows="8" cols="40"></textarea>
+        </div>
+        <div class="group">
+          <input type="text" name="name" placeholder="Name">
+        </div>
+        <div class="group">
+          <button type="submit">add comment</button>
+        </div>
+      </form>
+      <ul class="comments">
+
+      </ul>
+    </script>
+
+    <script src="bundle.js" charset="utf-8"></script>
+  </body>
+</html>
