@@ -44,7 +44,13 @@ gulp.task('styles', () => {
     }));
 });
 
-gulp.task('build', ['html', 'script', 'styles']);
+//Images
+gulp.task('images', () => {
+  gulp.src('src/styles/images/*')
+    .pipe(gulp.dest('dist/images/'))
+});
+
+gulp.task('build', ['html', 'script', 'styles', 'images']);
 
 gulp.task('deploy', ['build'], () => {
   ghPages.publish('dist');
@@ -57,7 +63,8 @@ gulp.task('serve', ['build'], () => {
 
   gulp.watch('src/**/*.{html,jade}', ['html']);
   gulp.watch('src/**/*.{scss,sass}', ['styles']);
-  gulp.watch('src/**/*.js', ['script'])
+  gulp.watch('src/**/*.js', ['script']);
+  gulp.watch('src/styles/images/*', ['images']);
 });
 
 gulp.task('default', ['serve']);
